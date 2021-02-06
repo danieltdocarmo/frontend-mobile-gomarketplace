@@ -35,14 +35,17 @@ const Dashboard: React.FC = () => {
 
   useEffect(() => {
     async function loadProducts(): Promise<void> {
-      // TODO
+      const result = await api.get('/products');
+      console.log(result);
+      console.log('passing by over there');
+      setProducts(result.data);
     }
 
     loadProducts();
   }, []);
 
   function handleAddToCart(item: Product): void {
-    // TODO
+      
   }
 
   return (
